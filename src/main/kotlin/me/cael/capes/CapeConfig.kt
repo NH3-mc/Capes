@@ -11,4 +11,6 @@ class CapeConfig : ConfigData {
     var enableLabyMod = false
     var enableWynntils = false
     var enableMinecraftCapesMod = false
+    var enableNethernet = true
+    var enableNethernetHD = true
 }
