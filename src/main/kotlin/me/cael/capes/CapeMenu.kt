@@ -56,7 +56,17 @@ class CapeMenu(parent: Screen, gameOptions: GameOptions) : GameOptionsScreen(par
             configManager.save()
             buttonWidget.message = CapeType.WYNNTILS.getToggleText(config.enableWynntils)
         })
-        addButton(ButtonWidget(width / 2 - 100, height / 6 + 3 * 24, 200, 20, TranslatableText("options.capes.optifineeditor")) { buttonWidget: ButtonWidget ->
+                addButton(ButtonWidget(width / 2 - 155, height / 6 + 3 * 24, 150, 20, CapeType.NETHERNET.getToggleText(config.enableNethernet)) { buttonWidget: ButtonWidget ->
+            config.enableNethernet = !config.enableNethernet
+            configManager.save()
+            buttonWidget.message = CapeType.NETHERNET.getToggleText(config.enableNethernet)
+        })
+        addButton(ButtonWidget(width / 2 - 155 + 160, height / 6 + 3 * 24, 150, 20, CapeType.NETHERNETHD.getToggleText(config.enableNethernetHD)) { buttonWidget: ButtonWidget ->
+            config.enableNethernetHD = !config.enableNethernetHD
+            configManager.save()
+            buttonWidget.message = CapeType.NETHERNETHD.getToggleText(config.enableNethernetHD)
+        })
+        addButton(ButtonWidget(width / 2 - 100, height / 6 + 6 * 24, 200, 20, TranslatableText("options.capes.optifineeditor")) { buttonWidget: ButtonWidget ->
             try {
                 val r1 = Random()
                 val r2 = Random(System.identityHashCode(Object()).toLong())
